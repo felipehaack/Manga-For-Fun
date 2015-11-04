@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#34495e"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="#FFF"
+            android:text="Manga Page URL"
+            android:textStyle="bold"
+            android:singleLine="false" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#FFF"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/download_dialog_spinner_hosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="#f0f0d8"
+        android:popupBackground="#cdcdb6"/>
+
+    <Spinner
+        android:id="@+id/download_dialog_spinner_languages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#eeeec0"
+        android:popupBackground="#cdcdb6" />
+
+    <EditText
+        android:id="@+id/download_dialog_url"
+        android:text=""
+        android:hint="Type a manga page url..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textSize="19sp"
+        android:padding="5dp"
+        android:layout_marginBottom="16dp"
+        android:inputType="text|textNoSuggestions"
+        android:maxLines="1"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:background="#ededa7"
+        android:lines="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/download_dialog_button_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Procurar"
+            android:background="@null"
+            android:textColor="@color/download_dialog_button"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button
+            android:id="@+id/download_dialog_button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:background="@null"
+            android:textColor="@color/download_dialog_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginLeft="6dp"/>
+    </LinearLayout>
+
+</LinearLayout>

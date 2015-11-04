@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#60808F">
+
+    <ScrollView
+        android:id="@+id/scrollview_download_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_download_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:background="#60808F"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#60808A"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/chapters_label_download_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capitulos: "
+                    android:textColor="#FFF"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="left" />
+
+                <TextView
+                    android:id="@+id/chapters_download_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFF"
+                    android:textSize="16dp"
+                    android:gravity="left" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#34495e">
+
+                <ImageView
+                    android:id="@+id/photo_download_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/description_download_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#60808F"
+                android:text=""
+                android:textColor="#FFF"
+                android:textSize="14dp"
+                android:padding="20dp"
+                android:textIsSelectable="true"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
