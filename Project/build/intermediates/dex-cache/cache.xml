@@ -2,74 +2,88 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\classes.jar"
+        jar="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\classes-d46537b88818d3e7b16e88a6668c982b9c05f41b.jar" />
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-b8d1761f3c3ec6ccaac0a8d7ec50ce4bf5ed3f9f.jar" />
     </item>
     <item
-        jar="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\exploded-aar\com.github.rey5137\material\1.2.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="0040be6592cbfbb19a2c1e90a759278795ed2280">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\classes-e88deed7b730a49f58abfde61cfd5ec69a20db90.jar" />
-    </item>
-    <item
-        jar="C:\Users\PhelipeHS\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-29e22449c0f8c3bf178df09578c75eccac707b06.jar" />
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-8b54ff6bb0697cd3492c0a2451644cb65a2bffe7.jar" />
     </item>
     <item
-        jar="C:\Users\PhelipeHS\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.koushikdutta.ion/ion/2.1.6/cd55ef3ba6d8b62838b658ba2507b019dffb3a08/ion-2.1.6.jar"
         jumboMode="false"
-        revision="21.1.2"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-a8f991eec942629d01972925c192cb94b75efc93.jar" />
-    </item>
-    <item
-        jar="C:\Users\PhelipeHS\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\gson-2.3-adf88f4352abd91cd104dae8ff964a8df364196c.jar" />
-    </item>
-    <item
-        jar="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\classes-76aba033418edb97738b69f96431a7a2479f4339.jar" />
-    </item>
-    <item
-        jar="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-d1b1806b9209628e129aa42790f57a3fdfa1d33e.jar" />
-    </item>
-    <item
-        jar="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\classes-37e71b319f18a42e0cb91236f030d7cdbb002658.jar" />
-    </item>
-    <item
-        jar="C:\Users\PhelipeHS\.gradle\caches\modules-2\files-2.1\com.koushikdutta.ion\ion\2.1.6\cd55ef3ba6d8b62838b658ba2507b019dffb3a08\ion-2.1.6.jar"
-        jumboMode="false"
-        revision="21.1.2"
+        revision="23.0.0"
         sha1="cd55ef3ba6d8b62838b658ba2507b019dffb3a08">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\ion-2.1.6-5b37d3b83c1b1c6207ad82d03b4bf1b4bc273738.jar" />
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/ion-2.1.6-67e274c5251cf9bc7c9346f35a2af921af6931f1.jar" />
     </item>
     <item
-        jar="C:\Users\PhelipeHS\.gradle\caches\modules-2\files-2.1\com.koushikdutta.async\androidasync\2.1.6\e3d5f6ab2003e31f2cf5ea61b4731a21e9517935\androidasync-2.1.6.jar"
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/2.1.6/e3d5f6ab2003e31f2cf5ea61b4731a21e9517935/androidasync-2.1.6.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e3d5f6ab2003e31f2cf5ea61b4731a21e9517935">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/androidasync-2.1.6-e0eca774993fd61959f5c6b6dd336b0552934779.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/2.1.6/e3d5f6ab2003e31f2cf5ea61b4731a21e9517935/androidasync-2.1.6.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e3d5f6ab2003e31f2cf5ea61b4731a21e9517935">
-        <dex dex="C:\Users\PhelipeHS\Desktop\MangaForFun\app\build\intermediates\pre-dexed\debug\androidasync-2.1.6-a60c20262022902478c2dc60ee2a53fc14c9cd50.jar" />
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/androidasync-2.1.6-e0eca774993fd61959f5c6b6dd336b0552934779.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-8b54ff6bb0697cd3492c0a2451644cb65a2bffe7.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.koushikdutta.ion/ion/2.1.6/cd55ef3ba6d8b62838b658ba2507b019dffb3a08/ion-2.1.6.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="cd55ef3ba6d8b62838b658ba2507b019dffb3a08">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/ion-2.1.6-67e274c5251cf9bc7c9346f35a2af921af6931f1.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/classes-38a79d99d87f508b5d03de7390a74264f2929e97.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/gson-2.3-e2b02242cedb9d108ad153cd5e51036970046688.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/gson-2.3-e2b02242cedb9d108ad153cd5e51036970046688.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/classes-b10472b6f2dc12e36ab5d027f527f3384382e858.jar" />
+    </item>
+    <item
+        jar="/Users/felipepaiva/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-79bba1faefcb3bef1a530cd14173ce9f72e21e59.jar" />
     </item>
 
 </items>

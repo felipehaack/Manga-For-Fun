@@ -8,6 +8,7 @@
         android:id="@+id/main_expandable_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:groupIndicator="@null"
         android:elevation="1dp"/>
 
     <Button
@@ -18,7 +19,7 @@
         android:layout_margin="24dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#FFF"
         android:elevation="2dp"
         android:background="@drawable/main_fba_button"/>
