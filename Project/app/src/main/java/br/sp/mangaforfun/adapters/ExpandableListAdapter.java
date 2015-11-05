@@ -101,6 +101,18 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             LayoutInflater infalInflater = (LayoutInflater) this._context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             convertView = infalInflater.inflate(R.layout.list_group, null);
+
+            if(groupPosition == _listDataHeader.size() - 1){
+
+                View view = convertView.findViewById(R.id.list_group_view_1);
+                view.setVisibility(View.GONE);
+
+                View view2 = convertView.findViewById(R.id.list_group_view_2);
+                view2.setVisibility(View.GONE);
+
+                View view3 = convertView.findViewById(R.id.list_group_view_3);
+                view3.setVisibility(View.VISIBLE);
+            }
         }
 
         TextView lblListHeader = (TextView) convertView.findViewById(R.id.lblListHeader);
