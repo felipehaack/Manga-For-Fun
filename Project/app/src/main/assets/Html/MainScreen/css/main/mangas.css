@@ -1,0 +1,287 @@
+@font-face { 
+
+    font-family: 'HelveticaNeue-Bold'; 
+
+    src: url('../../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'), 
+        url('../../fonts/HelveticaNeue-Bold.ttf') format('truetype'), 
+        url('../../fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold') format('svg'); 
+
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@font-face { 
+
+    font-family: 'HelveticaNeue'; 
+
+    src: url('../../fonts/HelveticaNeue.ttf') format('truetype');
+
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+
+#mangasCtn{
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 0px;
+    left: 0px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: #686868;
+}
+
+#mangasCtn ul.manga{
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    background-color: #303030;
+
+    border-bottom: 1px solid #6e6c6c;
+}
+
+#mangasCtn ul.manga > li:first-child{
+
+    display: flex;
+}
+
+#mangasCtn > ul.manga > li:first-child{
+
+    flex-basis: 100%;
+}
+
+#mangasCtn > ul.manga > li > ul:first-child{
+
+    width: 100%;
+
+    display: block;
+
+    color: white;
+
+    padding: 5px 15px 5px 10px;
+    
+    text-transform: capitalize;
+}
+
+#mangasCtn > ul.manga > li > ul:first-child > li:first-child{
+
+    display: block;
+
+    font-weight: bold;
+    font-family: 'HelveticaNeue-Bold';
+    font-size: 23px;
+    
+    margin-bottom: 5px;
+}
+
+#mangasCtn > ul.manga > li > ul:first-child > li:nth-child(2){
+
+    display: block;
+
+    font-family: 'HelveticaNeue';
+    font-size: 17px;
+}
+
+#mangasCtn > ul.manga > li:nth-child(2){
+
+    flex-basis: 40px;
+
+    position: relative;
+
+    padding: 0 10px 0 10px;
+
+    background-color: #6e6c6c;
+
+    border-radius: 0 0 0 20px;
+    
+    list-style-type: none;
+}
+
+#mangasCtn ul.manga + ul.manga > li:nth-child(2){
+   
+    border-radius: 20px 0 0 20px;
+}
+
+#mangasCtn ul.manga:nth-child(2) > li:nth-child(2){
+    
+    background-color: red;
+}
+
+#mangasCtn > ul li:nth-child(2) .arrowCtn{
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    
+    cursor: pointer;
+}
+
+#mangasCtn > ul li:nth-child(2) .arrowCtn .arrow{
+
+    width: 16px;
+    height: 25px;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: auto;
+
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+#mangasCtn > ul li:nth-child(2) .arrowCtn .arrow .arrowUp{
+
+    width: 20px;
+    height: 3px;
+
+    background-color: white;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+#mangasCtn > ul li:nth-child(2) .arrowCtn .arrow .arrowDown{
+
+    width: 20px;
+    height: 3px;
+
+    background-color: white;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 21px;
+    left: 0;
+
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 100%;
+
+    -webkit-transform: rotate(35deg);
+    transform: rotate(-35deg);
+}
+
+#mangasCtn ul.chapters{
+
+    display: block;
+
+    background-color: #303030;
+
+    border-top: 1px solid #838383;
+}
+
+#mangasCtn ul.chapters > li{
+
+    display: block;
+
+    background-color: #929292;
+    
+    border-bottom: 1px solid #7D7D7D;
+    border-top: 1px solid #747474;    
+}
+
+#mangasCtn ul.chapters > li:nth-child(odd){
+
+    background-color: #AFAFAF;
+}
+
+#mangasCtn ul.chapters > li > ul{
+
+    display: flex;
+
+    padding: 10px 40px 10px 40px;
+}
+
+#mangasCtn ul.chapters > li > ul > li{
+
+    display: flex;
+    
+    text-transform: capitalize;
+}
+
+#mangasCtn ul.chapters > li > ul > li:first-child{
+
+    width: 100%;
+    
+    padding: 0 10px 0 10px;
+}
+
+#mangasCtn ul.chapters > li > ul > li:nth-child(2){
+
+    width: 40px;
+    
+    position: relative;
+}
+
+#mangasCtn ul.chapters > li > ul > li > ul:first-child{
+
+    display: block;
+}
+
+#mangasCtn ul.chapters > li > ul > li > ul > li{
+
+    display: block;
+
+    color: white;
+
+    font-family: 'HelveticaNeue';
+
+    font-size: 15px;
+}
+
+#mangasCtn ul.chapters > li > ul > li > ul > li:first-child{
+
+    margin-bottom: 5px;
+}
+
+#mangasCtn ul.chapters > li > ul > li:nth-child(2) .select{
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    
+    background: url('../../imgs/main/check.png') transparent no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    
+    cursor: pointer;
+}
