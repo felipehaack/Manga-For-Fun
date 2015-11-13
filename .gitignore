@@ -1,0 +1,8 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+.DS_Store
+/build
+app/app.iml
+.idea
+/Html/nbproject/private/
