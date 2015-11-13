@@ -1,6 +1,10 @@
 package br.sp.mangaforfun.activities;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -9,25 +13,19 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.ExpandableListView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import br.sp.mangaforfun.R;
-import br.sp.mangaforfun.adapters.ExpandableListAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button addManga;
-
-    private List<String> listDataHeader = new ArrayList<String>();
-    private HashMap<String, List<String>> listDataChild = new HashMap<String, List<String>>();
-
-    private ExpandableListView expandableListView;
-    private ExpandableListAdapter expandableListAdapter;
+    private WebView webView;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +34,49 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        expandableListView = (ExpandableListView) findViewById(R.id.main_expandable_list_view);
+        webView = (WebView) findViewById(R.id.webview_main);
 
-        populateLists();
+        webView.setVisibility(View.GONE);
 
-        expandableListAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+        WebSettings webSettings = webView.getSettings();
 
-        expandableListView.setAdapter(expandableListAdapter);
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.setWebViewClient(new WebViewClient(){
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+
+                progressDialog = new ProgressDialog(MainActivity.this);
+
+                progressDialog.setCancelable(false);
+                progressDialog.setIndeterminate(true);
+                progressDialog.setMessage("Carregando...");
+                progressDialog.setTitle(null);
+
+                progressDialog.show();
+
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+
+                webView.setVisibility(View.VISIBLE);
+
+                view.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        progressDialog.dismiss();
+                    }
+                }, 1500);
+
+                super.onPageFinished(view, url);
+            }
+        });
+
+        webView.loadUrl("file:///android_asset/Html/MainScreen/main.html");
 
         addManga = (Button) findViewById(R.id.add_manga_button);
 
@@ -75,23 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
-
-    public void populateLists() {
-
-        for (int i = 0; i < 5; ++i) {
-
-            listDataHeader.add("Manga " + String.valueOf(i));
-
-            List<String> chapterList = new ArrayList<>();
-
-            for (int j = 0; j < 40; ++j) {
-
-                chapterList.add("Chapter " + String.valueOf(j));
-            }
-
-            listDataChild.put(listDataHeader.get(listDataHeader.size() - 1), chapterList);
-        }
     }
 
     @Override

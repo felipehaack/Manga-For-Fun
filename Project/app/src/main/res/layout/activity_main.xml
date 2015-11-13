@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#787878">
 
-    <ExpandableListView
-        android:id="@+id/main_expandable_list_view"
+    <WebView
+        android:id="@+id/webview_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:groupIndicator="@null"
-        android:elevation="1dp"/>
+        android:layout_height="match_parent"
+        android:background="#787878"></WebView>
 
     <Button
         android:id="@+id/add_manga_button"
