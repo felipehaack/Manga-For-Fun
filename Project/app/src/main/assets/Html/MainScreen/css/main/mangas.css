@@ -108,8 +108,8 @@
     list-style-type: none;
 }
 
-#mangasCtn ul.manga + ul.manga > li:nth-child(2){
-   
+#mangasCtn ul.manga  li:nth-child(2){
+
     border-radius: 20px 0 0 20px;
 }
 
@@ -151,6 +151,9 @@
 
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+    
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }
 
 #mangasCtn > ul li:nth-child(2) .arrowCtn .arrow .arrowUp{
@@ -283,5 +286,14 @@
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
     
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    
     cursor: pointer;
+}
+
+#mangasCtn ul.chapters > li > ul > li:nth-child(2) .select:hover{
+    
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
 }

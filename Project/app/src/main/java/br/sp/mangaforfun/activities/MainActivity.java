@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -42,7 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
         webSettings.setJavaScriptEnabled(true);
 
-        webView.setWebViewClient(new WebViewClient(){
+        if (Build.VERSION.SDK_INT >= 19)
+            webView.setWebContentsDebuggingEnabled(true);
+
+        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+
+        webView.setWebViewClient(new WebViewClient() {
 
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -77,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         webView.loadUrl("file:///android_asset/Html/MainScreen/main.html");
+
+
 
         addManga = (Button) findViewById(R.id.add_manga_button);
 
