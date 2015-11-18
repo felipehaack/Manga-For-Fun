@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 19)
             webView.setWebContentsDebuggingEnabled(true);
 
-        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         webView.setWebViewClient(new WebViewClient() {
 
@@ -82,9 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("file:///android_asset/Html/MainScreen/main.html");
-
-
+        webView.loadUrl("file:///android_asset/Html/MainScreen/index.html");
 
         addManga = (Button) findViewById(R.id.add_manga_button);
 

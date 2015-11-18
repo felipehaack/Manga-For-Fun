@@ -1,5 +1,5 @@
 
-var mainAPP = {
+var app = {
     utils: {
         touchOrClick: {
             start: 'mousedown',
@@ -11,9 +11,9 @@ var mainAPP = {
 
                 if (t) {
 
-                    mainAPP.utils.touchOrClick.start = 'touchstart';
-                    mainAPP.utils.touchOrClick.move = 'touchmove';
-                    mainAPP.utils.touchOrClick.end = 'touchend';
+                    app.utils.touchOrClick.start = 'touchstart';
+                    app.utils.touchOrClick.move = 'touchmove';
+                    app.utils.touchOrClick.end = 'touchend';
                 }
             }
         },
@@ -22,14 +22,14 @@ var mainAPP = {
             var t = 'WebkitAppearance' in document.documentElement.style;
 
             if (t)
-                mainAPP.utils.hasWebKit = '-webkit-';
+                app.utils.hasWebKit = '-webkit-';
             else
-                mainAPP.utils.hasWebKit = '';
+                app.utils.hasWebKit = '';
         },
         init: function() {
 
-            mainAPP.utils.hasWebKit();
-            mainAPP.utils.touchOrClick.init();
+            app.utils.hasWebKit();
+            app.utils.touchOrClick.init();
         }
     },
     animation: {
@@ -37,43 +37,115 @@ var mainAPP = {
 
             if (up) {
 
-                $(child).css(mainAPP.utils.hasWebKit + 'transform', 'rotate(-90deg)');
+                $(child).css(app.utils.hasWebKit + 'transform', 'rotate(-90deg)');
             } else {
 
-                $(child).css(mainAPP.utils.hasWebKit + 'transform', 'rotate(90deg)');
+                $(child).css(app.utils.hasWebKit + 'transform', 'rotate(90deg)');
             }
         }
     },
     bind: {
+        arrow: {
+            lock: true,
+            init: function() {
+
+                $('.arrowCtn').mouseenter(function() {
+
+
+                });
+
+                $('.arrowCtn').mouseleave(function() {
+
+
+                });
+
+                $('.arrowCtn').bind(app.utils.touchOrClick.start, function() {
+
+                    app.bind.arrow.lock = false;
+                });
+
+                $('.arrowCtn').bind(app.utils.touchOrClick.move, function() {
+
+                    if (!app.bind.arrow.lock)
+                        app.bind.arrow.lock = true;
+                });
+
+                $('.arrowCtn').bind(app.utils.touchOrClick.end, function() {
+
+                    if (!app.bind.arrow.lock) {
+
+                        var next = $(this).parent().parent().next();
+
+                        if (next.height() > 0) {
+
+                            app.animation.arrow($(this).children(), true);
+
+                            next.height(0);
+                        } else {
+
+                            app.animation.arrow($(this).children(), false);
+
+                            next.css('height', 'auto');
+                        }
+                    }
+                });
+            }
+        },
+        select: {
+            lock: true,
+            init: function() {
+
+                $('.select').bind(app.utils.touchOrClick.start, function() {
+
+                    app.bind.select.lock = false;
+                });
+
+                $('.select').bind(app.utils.touchOrClick.move, function() {
+
+                    if (!app.bind.select.lock)
+                        app.bind.select.lock = true;
+                });
+
+                $('.select').bind(app.utils.touchOrClick.end, function() {
+
+                    if (!app.bind.select.lock) {
+                        
+                        var url = '';
+                        var background = $(this).css('background-image');
+
+                        if (background.indexOf('checkNormal') > -1)
+                            url = 'checkHover';
+                        else
+                            url = 'checkNormal';
+                        
+                        $(this).css({
+                            'background': 'url(imgs/main/' + url + '.png) transparent no-repeat',
+                            'background-size': 'contain',
+                            'background-position': '50% 50%'
+                        });
+                    }
+                });
+            }
+        }
+    },
+    adjust: {
         arrow: function() {
 
-            $('#mangasCtn > ul li:nth-child(2)').bind(mainAPP.utils.touchOrClick.end, function() {
-
-                var next = $(this).parent().next();
-
-                if (next.css('display') === 'block') {
-
-                    mainAPP.animation.arrow($(this).children().children(), true);
-
-                    next.css('display', 'none');
-                } else {
-
-                    mainAPP.animation.arrow($(this).children().children(), false);
-
-                    next.css('display', 'block');
-                }
-            });
+            $('.manga:first').find('li:last').css('border-radius', '0 0 0 20px');
+            $('.manga:last').find('li:last').css('border-radius', '20px 0 0 0');
         }
     },
     loaded: function() {
 
-        mainAPP.utils.init();
-        mainAPP.bind.arrow();
+        app.adjust.arrow();
+        app.utils.init();
+        app.bind.arrow.init();
+        app.bind.select.init();
     },
     init: function() {
 
-        window.onload = mainAPP.loaded;
+        window.onload = app.loaded;
     }
 };
 
-mainAPP.init();
+app.init();
