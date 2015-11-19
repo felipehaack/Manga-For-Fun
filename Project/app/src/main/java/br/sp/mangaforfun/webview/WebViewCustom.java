@@ -8,9 +8,9 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-public class CustomWebView extends WebView {
+public class WebViewCustom extends WebView {
 
-    public CustomWebView(Context context) {
+    public WebViewCustom(Context context) {
 
         super(context);
 
@@ -41,10 +41,19 @@ public class CustomWebView extends WebView {
             WebView.setWebContentsDebuggingEnabled(true);
 
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+    }
 
-        settings.setUserAgentString("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36");
+    public void configureForMain(){
 
-        setWebViewClient(new DownloadWebViewClient());
+        if(Build.VERSION.SDK_INT >= 17)
+            addJavascriptInterface(new WebViewInterface(getContext()), "WebViewInterface");
+    }
+
+    public void configureForDownload(){
+
+        getSettings().setUserAgentString("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36");
+
+        setWebViewClient(new WebViewClientDownloader());
         setWebChromeClient(new WebChromeClient());
     }
 

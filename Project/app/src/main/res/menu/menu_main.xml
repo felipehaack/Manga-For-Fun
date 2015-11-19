@@ -5,6 +5,24 @@
 
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="1"
         app:showAsAction="never" />
+
+    <item android:id="@+id/select_all"
+        android:title="@string/action_settings"
+        android:icon="@drawable/ic_select_all_white_24dp"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/refresh"
+        android:title="@string/action_settings"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        android:orderInCategory="3"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/download"
+        android:title="@string/action_settings"
+        android:icon="@drawable/ic_file_download_white_24dp"
+        android:orderInCategory="4"
+        app:showAsAction="always" />
 </menu>

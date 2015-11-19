@@ -12,18 +12,17 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import br.sp.mangaforfun.R;
 import br.sp.mangaforfun.helper.DownloadHelper;
-import br.sp.mangaforfun.webview.CustomWebView;
+import br.sp.mangaforfun.webview.WebViewCustom;
 
 public class DownloadActivity extends ActionBarActivity{
 
     /* Used to get the manga from host and display alerts */
-    private CustomWebView webView;
+    private WebViewCustom webView;
     private ProgressDialog progressDialog;
 
     /* Used to set datas to this view */
@@ -47,7 +46,7 @@ public class DownloadActivity extends ActionBarActivity{
 
         builder = createAlertDialog();
 
-        webView = new CustomWebView(this);
+        webView = new WebViewCustom(this);
 
         downloadHelper = new DownloadHelper(this);
     }

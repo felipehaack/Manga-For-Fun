@@ -3,7 +3,7 @@ package br.sp.mangaforfun.webview;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class DownloadWebViewClient extends WebViewClient {
+public class WebViewClientDownloader extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {

@@ -109,7 +109,7 @@ var app = {
                 $('.select').bind(app.utils.touchOrClick.end, function() {
 
                     if (!app.bind.select.lock) {
-                        
+
                         var url = '';
                         var background = $(this).css('background-image');
 
@@ -117,7 +117,7 @@ var app = {
                             url = 'checkHover';
                         else
                             url = 'checkNormal';
-                        
+
                         $(this).css({
                             'background': 'url(imgs/main/' + url + '.png) transparent no-repeat',
                             'background-size': 'contain',
