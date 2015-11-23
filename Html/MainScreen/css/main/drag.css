@@ -1,0 +1,74 @@
+#dragCtn{
+    
+    width: 70px;
+    height: 80px;
+    
+    position: absolute;
+    z-index: 3;
+    
+    background-color: rgba(0, 0, 0, 0.6);
+    
+    top: 0;
+    bottom: 0;
+    left: 0;
+    
+    margin: auto;
+    
+    border-radius: 0 40px 40px 0;
+    
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+#dragCtn .dragArrowCtn{
+    
+    width: 35px;
+    height: 48px;
+    
+    position: absolute;
+    
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
+    margin: auto;
+}
+
+#dragCtn .dragArrowCtn .dragArrowUp{
+    
+    width: 40px;
+    height: 3px;
+
+    background-color: white;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+#dragCtn .dragArrowCtn .dragArowDown{
+    
+    width: 40px;
+    height: 3px;
+
+    background-color: white;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 44px;
+    left: 0;
+
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 100%;
+
+    -webkit-transform: rotate(35deg);
+    transform: rotate(-35deg);
+}
