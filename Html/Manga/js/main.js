@@ -5,7 +5,7 @@ var app = {
             start: 'mousedown',
             move: 'mousemove',
             end: 'mouseup',
-            init: function () {
+            init: function() {
 
                 var t = "ontouchstart" in document.documentElement;
 
@@ -17,7 +17,7 @@ var app = {
                 }
             }
         },
-        hasWebKit: function () {
+        hasWebKit: function() {
 
             var t = 'WebkitAppearance' in document.documentElement.style;
 
@@ -26,7 +26,7 @@ var app = {
             else
                 app.utils.hasWebKit = '';
         },
-        init: function () {
+        init: function() {
 
             app.utils.hasWebKit();
             app.utils.touchOrClick.init();
@@ -37,50 +37,50 @@ var app = {
             rotate: 0,
             translate: 0,
             transition: {
-                on: function () {
+                on: function() {
 
                     $('.dragCtn').css(app.utils.hasWebKit + 'transition', 'all 0.3s linear');
                 },
-                off: function () {
+                off: function() {
 
                     $('.dragCtn').css(app.utils.hasWebKit + 'transition', 'all 0s');
                 }
             },
-            execute: function () {
+            execute: function() {
 
-                window.setTimeout(function () {
+                window.setTimeout(function() {
 
                     $('.dragCtn').css(app.utils.hasWebKit + 'transform', 'translate3d(' + app.animation.drag.translate + '%, 0px, 0) rotate(' + app.animation.drag.rotate + 'deg)');
                 }, 33);
             },
-            right: function () {
+            right: function() {
 
                 app.animation.drag.translate = 101;
                 app.animation.drag.rotate = 180;
             },
-            left: function () {
+            left: function() {
 
 
             },
-            center: function () {
+            center: function() {
 
                 app.animation.drag.translate = 0;
 
                 app.animation.drag.transition.on();
                 app.animation.drag.execute();
             },
-            toLeft: function () {
+            toLeft: function() {
 
                 $('.dragCtn').css('left', '0');
                 $('.dragCtn').css('right', 'auto');
             },
-            toRight: function () {
+            toRight: function() {
 
                 $('.dragCtn').css('right', '0');
                 $('.dragCtn').css('left', 'auto');
             }
         },
-        arrow: function (child, up) {
+        arrow: function(child, up) {
 
             if (up) {
 
@@ -92,96 +92,22 @@ var app = {
         }
     },
     bind: {
-        drag: {
-            x: 0,
-            y: 0,
-            t: 0,
-            lock: true,
-            lock2: true,
-            init: function () {
-
-                $('body').bind(app.utils.touchOrClick.start, function (e) {
-
-                    app.bind.drag.lock = false;
-
-                    app.bind.drag.x = e.pageX;
-                    app.bind.drag.y = e.pageY;
-                });
-
-                $('body').bind(app.utils.touchOrClick.move, function (e) {
-
-                    if (!app.bind.drag.lock) {
-
-                        var m = app.bind.drag.y > e.pageY ? app.bind.drag.y - e.pageY : e.pageY - app.bind.drag.y;
-
-                        if (m >= 10)
-                            app.bind.drag.lock = true;
-
-                        m = app.bind.drag.x > e.pageX ? app.bind.drag.x - e.pageX : e.pageX - app.bind.drag.x;
-
-                        if (m >= 10) {
-
-                            app.bind.drag.lock = true;
-                            app.bind.drag.lock2 = false;
-
-                            app.bind.drag.x = e.pageX;
-                            app.bind.drag.y = e.pageY;
-                        }
-                    }
-
-                    if (!app.bind.drag.lock2) {
-
-                        e.preventDefault();
-                        
-                        var m = app.bind.drag.t + (e.pageX - app.bind.drag.x);
-                        
-                        if(m < $(window).width() + 10 && m > 0)
-                            app.bind.drag.t = m;
-                        
-                        $('#mangasCtn').css(app.utils.hasWebKit + 'transform', 'translate3d(' + app.bind.drag.t + 'px, 0px, 0)');
-                        
-                         app.bind.drag.x = e.pageX;
-                    }
-                });
-
-                $('body').bind(app.utils.touchOrClick.end, function (e) {
-
-                    if(!app.bind.drag.lock2){
-                        
-                        $('#mangasCtn').css(app.utils.hasWebKit + 'transition', 'all 0.4s linear');
-                        
-                        app.bind.drag.t = 0;
-                        
-                        if(e.pageX > app.bind.drag.x)
-                            app.bind.drag.t = $(window).width() + 10;
-                        
-                        window.setTimeout(function (){
-                           
-                           $('#mangasCtn').css(app.utils.hasWebKit + 'transform', 'translate3d(' + app.bind.drag.t + 'px, 0px, 0)');
-                        }, 33);
-                    }
-
-                    app.bind.drag.lock = true;
-                    app.bind.drag.lock2 = true;
-                });
-            }
-        },
         arrow: {
             lock: true,
-            init: function () {
+            init: function() {
 
-                $('.arrowCtn').bind(app.utils.touchOrClick.start, function () {
+                $('.arrowCtn').bind(app.utils.touchOrClick.start, function() {
 
                     app.bind.arrow.lock = false;
                 });
 
-                $('.arrowCtn').bind(app.utils.touchOrClick.move, function () {
+                $('.arrowCtn').bind(app.utils.touchOrClick.move, function() {
 
                     if (!app.bind.arrow.lock)
                         app.bind.arrow.lock = true;
                 });
 
-                $('.arrowCtn').bind(app.utils.touchOrClick.end, function () {
+                $('.arrowCtn').bind(app.utils.touchOrClick.end, function() {
 
                     if (!app.bind.arrow.lock) {
 
@@ -204,20 +130,20 @@ var app = {
         },
         select: {
             lock: true,
-            init: function () {
+            init: function() {
 
-                $('.select').bind(app.utils.touchOrClick.start, function () {
+                $('.select').bind(app.utils.touchOrClick.start, function() {
 
                     app.bind.select.lock = false;
                 });
 
-                $('.select').bind(app.utils.touchOrClick.move, function () {
+                $('.select').bind(app.utils.touchOrClick.move, function() {
 
                     if (!app.bind.select.lock)
                         app.bind.select.lock = true;
                 });
 
-                $('.select').bind(app.utils.touchOrClick.end, function () {
+                $('.select').bind(app.utils.touchOrClick.end, function() {
 
                     if (!app.bind.select.lock) {
 
@@ -230,7 +156,7 @@ var app = {
                             url = 'checkNormal';
 
                         $(this).css({
-                            'background': 'url(imgs/main/' + url + '.png) transparent no-repeat',
+                            'background': 'url(../default/imgs/main/' + url + '.png) transparent no-repeat',
                             'background-size': 'contain',
                             'background-position': '50% 50%'
                         });
@@ -240,21 +166,20 @@ var app = {
         }
     },
     adjust: {
-        arrow: function () {
+        arrow: function() {
 
             $('.manga:first').find('li:last').css('border-radius', '0 0 0 20px');
             $('.manga:last').find('li:last').css('border-radius', '20px 0 0 0');
         }
     },
-    loaded: function () {
+    loaded: function() {
 
         app.adjust.arrow();
         app.utils.init();
         app.bind.arrow.init();
         app.bind.select.init();
-        app.bind.drag.init();
     },
-    init: function () {
+    init: function() {
 
         window.onload = app.loaded;
     }

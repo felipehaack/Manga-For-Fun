@@ -2,17 +2,24 @@ package br.sp.mangaforfun.webview;
 
 import android.content.Context;
 import android.os.Build;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 
 public class WebViewCustom extends WebView {
 
     public WebViewCustom(Context context) {
 
         super(context);
+    }
+
+    public WebViewCustom(Context context, AttributeSet attributeSet) {
+
+        super(context, attributeSet);
 
         WebSettings settings = getSettings();
 
@@ -29,9 +36,8 @@ public class WebViewCustom extends WebView {
         setInitialScale(1);
         setSaveEnabled(true);
         setDrawingCacheEnabled(true);
+        setFocusable(false);
 
-        setOverScrollMode(OVER_SCROLL_NEVER);
-        setScrollBarStyle(SCROLLBARS_OUTSIDE_OVERLAY);
         setDrawingCacheQuality(DRAWING_CACHE_QUALITY_HIGH);
 
         if (Build.VERSION.SDK_INT >= 17)
@@ -40,7 +46,7 @@ public class WebViewCustom extends WebView {
         if (Build.VERSION.SDK_INT >= 19)
             WebView.setWebContentsDebuggingEnabled(true);
 
-        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        setLayerType(View.LAYER_TYPE_HARDWARE, null);
     }
 
     public void configureForMain(){
@@ -67,19 +73,17 @@ public class WebViewCustom extends WebView {
     }
 
     @Override
+    public boolean performLongClick() {
+
+        return true;
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
 
         return super.onInterceptTouchEvent(ev);
     }
 
-    /**
-     * Where: WebViewAdmagInterface and ViewParent
-     * Because: some ADs use drag element, and, if it doesn't was implemented then the page will be swipe...
-     * ...WebViewAdmagInterface disable swipe to the ViewParent after detect preventDefault and release it when detect any finger on the surface
-     *
-     * @param event
-     * @return
-     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 

@@ -19,14 +19,20 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import br.sp.mangaforfun.R;
+import br.sp.mangaforfun.gestures.SlideLayerMangaWebView;
+import br.sp.mangaforfun.webview.WebViewCustom;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button addManga;
-    private WebView webView;
+    private WebViewCustom mangaWebView;
+    private WebViewCustom serverWebView;
     private ProgressDialog progressDialog;
+    private SlideLayerMangaWebView slideLayerMangaWebView;
+    private LinearLayout layoutMangaWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,54 +41,17 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        webView = (WebView) findViewById(R.id.webview_main);
+        layoutMangaWebView = (LinearLayout) findViewById(R.id.layout_manga_webview);
+        mangaWebView = (WebViewCustom) findViewById(R.id.manga_webview);
+        serverWebView = (WebViewCustom) findViewById(R.id.server_webview);
 
-        webView.setVisibility(View.GONE);
+        mangaWebView.loadUrl("file:///android_asset/Manga/index.html");
+        serverWebView.loadUrl("file:///android_asset/Server/index.html");
 
-        WebSettings webSettings = webView.getSettings();
+        mangaWebView.configureForMain();
+        serverWebView.configureForMain();
 
-        webSettings.setJavaScriptEnabled(true);
-
-        if (Build.VERSION.SDK_INT >= 19)
-            webView.setWebContentsDebuggingEnabled(true);
-
-        webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-
-        webView.setWebViewClient(new WebViewClient() {
-
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-
-                progressDialog = new ProgressDialog(MainActivity.this);
-
-                progressDialog.setCancelable(false);
-                progressDialog.setIndeterminate(true);
-                progressDialog.setMessage("Carregando...");
-                progressDialog.setTitle(null);
-
-                progressDialog.show();
-
-                super.onPageStarted(view, url, favicon);
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-
-                webView.setVisibility(View.VISIBLE);
-
-                view.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        progressDialog.dismiss();
-                    }
-                }, 1500);
-
-                super.onPageFinished(view, url);
-            }
-        });
-
-        webView.loadUrl("file:///android_asset/Html/MainScreen/index.html");
+        slideLayerMangaWebView = new SlideLayerMangaWebView(layoutMangaWebView, this);
 
         addManga = (Button) findViewById(R.id.add_manga_button);
 
@@ -136,5 +105,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        slideLayerMangaWebView.motionEvent(ev);
+
+        if(slideLayerMangaWebView.translate)
+            return true;
+
+        return super.dispatchTouchEvent(ev);
     }
 }

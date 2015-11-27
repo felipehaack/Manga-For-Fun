@@ -2,21 +2,32 @@
 <html>
     <head>
 
-        <title>Main Struct</title>
+        <title>Manga Screen</title>
 
         <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" type="text/css" href="css/reset.css">
-
-        <link rel="stylesheet" type="text/css" href="css/main/mangas.css">
+        <link rel="stylesheet" type="text/css" href="../default/css/reset.css">
         
-        <script type="text/javascript" src="libs/jquery-2.1.4.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../default/css/main/init.css">
+        <link rel="stylesheet" type="text/css" href="../default/css/main/mangas.css">
+        <link rel="stylesheet" type="text/css" href="../default/css/main/drag.css">
+        
+        <script type="text/javascript" src="../default/libs/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>
-
+        
+        <div id="dragCtn">
+            
+            <div class="dragArrowCtn">
+                
+                <div class="dragArrowUp"></div>
+                <div class="dragArowDown"></div>
+            </div>
+        </div>
+        
         <div id="mangasCtn">
 
             <ul class="manga">
@@ -107,9 +118,6 @@
                 </li>
             </ul>
             
-            
-            
-            
             <ul class="manga">
                 <li>
                     <ul>
@@ -197,8 +205,6 @@
                     </ul>
                 </li>
             </ul>
-            
-            
             
             <ul class="manga">
                 <li>

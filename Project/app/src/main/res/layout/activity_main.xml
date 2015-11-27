@@ -5,11 +5,30 @@
     tools:context=".MainActivity"
     android:background="#787878">
 
-    <WebView
-        android:id="@+id/webview_main"
+    <br.sp.mangaforfun.webview.WebViewCustom
+        android:id="@+id/server_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#787878"></WebView>
+        android:background="#787878"
+        android:elevation="1dp"/>
+
+    <LinearLayout
+        android:id="@+id/layout_manga_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:elevation="2dp">
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/shadow_effect"/>
+
+        <br.sp.mangaforfun.webview.WebViewCustom
+            android:id="@+id/manga_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/add_manga_button"
@@ -21,6 +40,6 @@
         android:layout_alignParentBottom="true"
         android:textSize="30sp"
         android:textColor="#FFF"
-        android:elevation="2dp"
+        android:elevation="3dp"
         android:background="@drawable/main_fba_button"/>
 </RelativeLayout>

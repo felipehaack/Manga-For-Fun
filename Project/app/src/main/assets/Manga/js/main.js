@@ -33,6 +33,53 @@ var app = {
         }
     },
     animation: {
+        drag: {
+            rotate: 0,
+            translate: 0,
+            transition: {
+                on: function() {
+
+                    $('.dragCtn').css(app.utils.hasWebKit + 'transition', 'all 0.3s linear');
+                },
+                off: function() {
+
+                    $('.dragCtn').css(app.utils.hasWebKit + 'transition', 'all 0s');
+                }
+            },
+            execute: function() {
+
+                window.setTimeout(function() {
+
+                    $('.dragCtn').css(app.utils.hasWebKit + 'transform', 'translate3d(' + app.animation.drag.translate + '%, 0px, 0) rotate(' + app.animation.drag.rotate + 'deg)');
+                }, 33);
+            },
+            right: function() {
+
+                app.animation.drag.translate = 101;
+                app.animation.drag.rotate = 180;
+            },
+            left: function() {
+
+
+            },
+            center: function() {
+
+                app.animation.drag.translate = 0;
+
+                app.animation.drag.transition.on();
+                app.animation.drag.execute();
+            },
+            toLeft: function() {
+
+                $('.dragCtn').css('left', '0');
+                $('.dragCtn').css('right', 'auto');
+            },
+            toRight: function() {
+
+                $('.dragCtn').css('right', '0');
+                $('.dragCtn').css('left', 'auto');
+            }
+        },
         arrow: function(child, up) {
 
             if (up) {
@@ -48,16 +95,6 @@ var app = {
         arrow: {
             lock: true,
             init: function() {
-
-                $('.arrowCtn').mouseenter(function() {
-
-
-                });
-
-                $('.arrowCtn').mouseleave(function() {
-
-
-                });
 
                 $('.arrowCtn').bind(app.utils.touchOrClick.start, function() {
 
@@ -109,7 +146,7 @@ var app = {
                 $('.select').bind(app.utils.touchOrClick.end, function() {
 
                     if (!app.bind.select.lock) {
-                        
+
                         var url = '';
                         var background = $(this).css('background-image');
 
@@ -117,9 +154,9 @@ var app = {
                             url = 'checkHover';
                         else
                             url = 'checkNormal';
-                        
+
                         $(this).css({
-                            'background': 'url(imgs/main/' + url + '.png) transparent no-repeat',
+                            'background': 'url(../default/imgs/main/' + url + '.png) transparent no-repeat',
                             'background-size': 'contain',
                             'background-position': '50% 50%'
                         });
