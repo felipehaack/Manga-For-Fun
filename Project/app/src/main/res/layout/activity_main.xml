@@ -1,51 +1,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_xml"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#787878">
 
-    <br.sp.mangaforfun.webview.WebViewCustom
-        android:id="@+id/server_webview"
+    <ExpandableListView
+        android:id="@+id/main_activity_expandable_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#787878"
-        android:elevation="1dp"/>
+        android:groupIndicator="@null"
+        android:dividerHeight="-1dp"
+        android:divider="@android:color/transparent"
+        android:background="#939393"/>
 
-    <LinearLayout
-        android:id="@+id/layout_manga_webview"
+    <br.sp.mangaforfun.extended.ExpandableListViewMangas
+        android:id="@+id/main_activity_expandable_listview_mangas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:elevation="3dp">
+        android:groupIndicator="@null"
+        android:dividerHeight="-1dp"
+        android:divider="@android:color/transparent"
+        android:background="#939393"
+        android:elevation="8dp"
+        android:translationZ="8dp"/>
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/shadow_effect"/>
-
-        <br.sp.mangaforfun.webview.WebViewCustom
-            android:id="@+id/manga_webview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:elevation="5dp">
-
-        <Button
-            android:id="@+id/add_manga_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="+"
-            android:layout_margin="24dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:textSize="30sp"
-            android:textColor="#FFF"
-            android:background="@drawable/main_fba_button"/>
-    </RelativeLayout>
+    <Button
+        android:id="@+id/add_manga_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="+"
+        android:layout_margin="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="30sp"
+        android:textColor="#FFF"
+        android:background="@drawable/main_fba_button"
+        android:elevation="12dp"
+        android:translationZ="12dp"
+        android:stateListAnimator="@anim/activity_main_add_button"/>
 </RelativeLayout>

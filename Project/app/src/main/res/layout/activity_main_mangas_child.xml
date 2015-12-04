@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#747474"/>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_mangas_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#AFAFAF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:orientation="vertical"
+            android:paddingLeft="35dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <br.sp.mangaforfun.utils.CapitalizedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cap."
+                    android:textColor="#FFF"
+                    android:textSize="18sp"
+                    android:paddingRight="10dp"/>
+
+                <br.sp.mangaforfun.utils.CapitalizedTextView
+                    android:id="@+id/textview_mangas_cap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="#FFF"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="4dp">
+
+                <br.sp.mangaforfun.utils.CapitalizedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pag."
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:allowUndo="false"
+                    android:paddingRight="10dp" />
+
+                <br.sp.mangaforfun.utils.CapitalizedTextView
+                    android:id="@+id/textview_mangas_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:paddingRight="5dp"/>
+
+                <br.sp.mangaforfun.utils.CapitalizedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:paddingRight="5dp"/>
+
+                <br.sp.mangaforfun.utils.CapitalizedTextView
+                    android:id="@+id/textview_mangas_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="35"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:paddingRight="5dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-60dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_check_white_24dp"
+                android:layout_margin="21dp"
+                android:contentDescription="check_child" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#7D7D7D"/>
+</LinearLayout>

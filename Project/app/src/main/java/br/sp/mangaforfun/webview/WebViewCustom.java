@@ -46,7 +46,7 @@ public class WebViewCustom extends WebView {
         if (Build.VERSION.SDK_INT >= 19)
             WebView.setWebContentsDebuggingEnabled(true);
 
-        setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
     public void configureForMain(){

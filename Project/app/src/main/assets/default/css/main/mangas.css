@@ -19,16 +19,17 @@
     
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    
-    box-shadow: -2px 0px 14px rgba(0, 0, 0, 0.9);
 }
 
 #mangasCtn ul.manga{
 
+    display: -webkit-flex;
     display: flex;
 
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    
     flex-direction: row;
-
     flex-wrap: nowrap;
 
     background-color: #303030;
@@ -38,11 +39,13 @@
 
 #mangasCtn ul.manga > li:first-child{
 
+    display: -webkit-flex;
     display: flex;
 }
 
 #mangasCtn > ul.manga > li:first-child{
-
+    
+    -webkit-flex-basis: 100%;
     flex-basis: 100%;
 }
 
@@ -80,6 +83,7 @@
 
 #mangasCtn > ul.manga > li:nth-child(2){
 
+    -webkit-flex-basis: 40px;
     flex-basis: 40px;
 
     position: relative;
@@ -217,6 +221,7 @@
 
 #mangasCtn ul.chapters > li > ul{
 
+    display: -webkit-flex;
     display: flex;
 
     padding: 10px 40px 10px 40px;
@@ -224,6 +229,7 @@
 
 #mangasCtn ul.chapters > li > ul > li{
 
+    display: -webkit-flex;
     display: flex;
     
     text-transform: capitalize;
