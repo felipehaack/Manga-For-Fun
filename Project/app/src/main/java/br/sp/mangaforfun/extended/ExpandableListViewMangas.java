@@ -3,12 +3,13 @@ package br.sp.mangaforfun.extended;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.AbsListView;
-import android.widget.Button;
 import android.widget.ExpandableListView;
+
+import br.sp.mangaforfun.helper.MainHelper;
 
 public class ExpandableListViewMangas extends ExpandableListView {
 
-    private Button fab;
+    private MainHelper mainHelper;
 
     public ExpandableListViewMangas(Context context, AttributeSet attrs) {
 
@@ -25,19 +26,19 @@ public class ExpandableListViewMangas extends ExpandableListView {
 
                 if (i == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
 
-                    fab.animate().scaleXBy(0.5f).scaleYBy(0.5f).scaleX(0).scaleY(0).setDuration(300);
+                    mainHelper.scaleInAddManga();
                 }
 
                 if (i == OnScrollListener.SCROLL_STATE_IDLE) {
 
-                    fab.animate().scaleXBy(0.5f).scaleYBy(0.5f).scaleX(1).scaleY(1).setDuration(300);
+                    mainHelper.scaleOutAddManga();
                 }
             }
         });
     }
 
-    public void setButton(Button fab) {
+    public void setMainHelper(MainHelper mainHelper) {
 
-        this.fab = fab;
+        this.mainHelper = mainHelper;
     }
 }

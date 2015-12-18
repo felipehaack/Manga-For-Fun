@@ -31,7 +31,8 @@
             android:name=".activities.DownloadActivity"
             android:label=""
             android:parentActivityName=".activities.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
@@ -47,5 +48,4 @@
                 android:value=".activities.MainActivity" />
         </activity>
     </application>
-
 </manifest>

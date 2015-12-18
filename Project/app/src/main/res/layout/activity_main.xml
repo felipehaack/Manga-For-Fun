@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         android:textSize="30sp"
         android:textColor="#FFF"
-        android:background="@drawable/main_fba_button"
+        android:background="@drawable/activity_main_fba_button"
         android:elevation="12dp"
         android:translationZ="12dp"
         android:stateListAnimator="@anim/activity_main_add_button"/>

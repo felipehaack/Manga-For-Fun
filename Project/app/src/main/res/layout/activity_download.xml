@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +9,7 @@
         android:id="@+id/scrollview_download_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +28,8 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:text="Nisekoi"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -53,23 +54,33 @@
                     android:id="@+id/chapters_download_activity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="240"
                     android:textColor="#FFF"
                     android:textSize="16dp"
                     android:gravity="left" />
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:background="#34495e">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:textColor="#FFF"
+                    android:text="SORRY, IMAGE NOT AVALIABLE."/>
 
                 <ImageView
                     android:id="@+id/photo_download_activity"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="match_parent"
                     android:scaleType="fitCenter"
-                    android:layout_margin="20dp"/>
+                    android:layout_margin="20dp"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <TextView
@@ -77,11 +88,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#60808F"
-                android:text=""
+                android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc"
                 android:textColor="#FFF"
                 android:textSize="14dp"
                 android:padding="20dp"
                 android:textIsSelectable="true"/>
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+
+    <WebView
+        android:id="@+id/activity_download_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+</RelativeLayout>

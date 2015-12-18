@@ -1,0 +1,115 @@
+Messages Error:
+	1. 
+
+MangaReader
+	Mangas:
+		URL: http://www.mangareader.net/search
+		Inputs:
+			Text: 
+				document.getElementById('searchinput').value = 'MANGA_NAME';
+			Submit:
+				document.getElementsByClassName('submitbutton')[0].click();
+		Result:
+			
+			var result = new Array();
+			var mangas = document.getElementsByClassName('manga_name');
+			
+			for(var i = 0; i < mangas.length; ++i){
+
+				var manga = mangas[i].getElementsByTagName('a')[0];
+
+				result.push({
+					name: manga.innerHTML.trim(),
+					url: manga.href
+				});
+			}
+
+			console.log(JSON.stringify(result));
+	
+	Chapters:
+		URL: http://www.mangareader.net/nisekoi
+
+		var result = new Array();
+		var chapters = document.getElementById('chapterlist').getElementsByTagName('tr');
+
+		for(var i = 1; i < chapters.length; ++i){
+			
+			var chapter = chapters[i].getElementsByTagName('a')[0];
+
+			result.push({
+				name: chapter.innerHTML.trim(),
+				url: chapter.href
+			});
+		}
+
+		console.log(JSON.stringify(result));
+
+Batoto
+	URL: http://bato.to/forums/index.php?app=core&module=search&search_in=ccs
+	Mangas:
+		Inputs:
+			Text: 
+				document.getElementById('query').value = 'MANGA_NAME';
+			Submit:
+				
+				var submit = document.getElementsByClassName('input_submit');
+
+				for(var i = 0; i < submit.length; ++i){
+
+					if(submit[i].value.match(/search/gi) !== null){	
+
+						submit[i].click();
+						break;
+					}
+				}
+		Result:
+			
+			var result = new Array();
+			var mangas = document.getElementsByClassName('chapters_list')[0].getElementsByTagName('tr');
+
+			for(var i = 0; i < mangas.length; ++i){
+				
+				var manga = mangas[i].getElementsByTagName('a');
+				
+				if(manga.length > 0){
+
+					var mangaName = manga[1].innerHTML;
+					mangaName = mangaName.substring(mangaName.indexOf('>') + 1, mangaName.length).trim();
+
+					result.push({
+						name: mangaName,
+						url: manga[1].href
+					});
+				}
+			}
+
+			console.log(JSON.stringify(result));
+
+	Chapters:
+		URL: http://bato.to/comic/_/comics/tokiwa-kitareri-r14455
+
+		var language = 'italian';
+
+		var expandable = document.getElementsByClassName('chapter_row_expand')[0];
+		
+		if(typeof expandable !== 'undefined')
+			expandable.click();
+
+		var result = new Array();
+		var regex = new RegExp(language, 'gi');
+		var chapters = document.getElementsByClassName('chapters_list')[0].getElementsByClassName('chapter_row');
+
+		for(var i = 0; i < chapters.length; ++i){
+
+			if(chapters[i].getAttribute('class').match(regex) !== null){
+
+				var chapter = chapters[i].getElementsByTagName('a')[0];
+
+				result.push({
+					name: chapter.innerHTML.substring(chapter.innerHTML.indexOf('>') + 1, chapter.innerHTML.length).trim(),
+					url: chapter.href
+				});
+			}		
+		}
+
+		console.log(JSON.stringify(result.reverse()));

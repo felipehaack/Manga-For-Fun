@@ -9,10 +9,13 @@ import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 
+import br.sp.mangaforfun.helper.MainHelper;
+
 public class SlideLayerExpandableListView {
 
-    private ExpandableListView expandableListView;
     private Activity activity;
+    private ExpandableListView expandableListView;
+    private MainHelper mainHelper;
 
     private float startX = 0f;
     private float startY = 0f;
@@ -41,10 +44,11 @@ public class SlideLayerExpandableListView {
         }
     };
 
-    public SlideLayerExpandableListView(ExpandableListView expandableListView, Activity activity) {
+    public SlideLayerExpandableListView(ExpandableListView expandableListView, Activity activity, MainHelper mainHelper) {
 
         this.expandableListView = expandableListView;
         this.activity = activity;
+        this.mainHelper = mainHelper;
 
         setWidth();
     }
@@ -75,6 +79,8 @@ public class SlideLayerExpandableListView {
 
                 acumX = (float) width;
             }
+
+            mainHelper.scaleOutAddManga();
         }
     }
 

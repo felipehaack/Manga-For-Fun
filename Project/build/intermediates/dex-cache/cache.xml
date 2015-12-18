@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/exploded-aar/com.xgc1986.android/ripplebutton/0.4.1/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="fe4a82d37ae0d121dda801c9d7b9350c9a6867a6">
+        <dex dex="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/pre-dexed/debug/classes-02fc3cf8fd87a7256e23a3971bff3dfb2aad0cb3.jar" />
+    </item>
+    <item
         jar="/Users/felipepaiva/Desktop/Felipe/Projects Git/Manga-For-Fun/Project/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"

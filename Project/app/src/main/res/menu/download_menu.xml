@@ -12,5 +12,13 @@
         android:id="@+id/add"
         android:icon="@drawable/ic_add_circle_outline_white_24dp"
         android:title="Add manga"
+        android:visible="false"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/stop"
+        android:icon="@drawable/abc_ic_clear_mtrl_alpha"
+        android:title="Stop Search"
+        android:visible="false"
         app:showAsAction="always"/>
 </menu>

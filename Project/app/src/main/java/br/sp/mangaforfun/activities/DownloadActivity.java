@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.UiThread;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,7 +22,7 @@ import br.sp.mangaforfun.R;
 import br.sp.mangaforfun.helper.DownloadHelper;
 import br.sp.mangaforfun.webview.WebViewCustom;
 
-public class DownloadActivity extends ActionBarActivity{
+public class DownloadActivity extends AppCompatActivity{
 
     /* Used to get the manga from host and display alerts */
     private WebViewCustom webView;
@@ -30,6 +33,8 @@ public class DownloadActivity extends ActionBarActivity{
 
     /* For Custom Dialog */
     private EditText editTextUrl;
+
+    private ScrollView scrollView;
     //private int radioOptionId = R.id.download_dialog_radio_mangareader;
 
     AlertDialog.Builder builder;
@@ -49,6 +54,12 @@ public class DownloadActivity extends ActionBarActivity{
         webView = new WebViewCustom(this);
 
         downloadHelper = new DownloadHelper(this);
+
+        scrollView = (ScrollView) findViewById(R.id.scrollview_download_activity);
+
+        scrollView.scrollTo(0, 0);
+        scrollView.smoothScrollTo(0, 0);
+        scrollView.requestFocus(View.FOCUS_UP);
     }
 
     @Override
@@ -150,7 +161,7 @@ public class DownloadActivity extends ActionBarActivity{
 
                     webView.loadUrl(url);
 
-                    progressDialog = new ProgressDialog(DownloadActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                    progressDialog = new ProgressDialog(DownloadActivity.this);
 
                     progressDialog.setCancelable(true);
                     progressDialog.setIndeterminate(true);

@@ -2,7 +2,6 @@ package br.sp.mangaforfun.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -22,6 +21,7 @@ import br.sp.mangaforfun.adapters.ExpandableListAdapterMangas;
 import br.sp.mangaforfun.adapters.ExpandableListAdapterServer;
 import br.sp.mangaforfun.extended.ExpandableListViewMangas;
 import br.sp.mangaforfun.gestures.SlideLayerExpandableListView;
+import br.sp.mangaforfun.helper.MainHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private ExpandableListView expandableListViewServer;
     private ExpandableListViewMangas expandableListViewManga;
     private SlideLayerExpandableListView slideLayerMangaWebView;
-
+    private MainHelper mainHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +38,21 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        addManga = (Button) findViewById(R.id.add_manga_button);
+        expandableListViewServer = (ExpandableListView) findViewById(R.id.main_activity_expandable_listview);
+        expandableListViewManga = (ExpandableListViewMangas) findViewById(R.id.main_activity_expandable_listview_mangas);
+
+        createMainHelper();
         createButton();
         createExpandableListViewManga();
         createExpandableListViewServer();
-        setPerspective();
+
+        slideLayerMangaWebView = new SlideLayerExpandableListView(expandableListViewManga, this, mainHelper);
     }
 
-    public void setPerspective(){
-    }
+    public void createExpandableListViewManga() {
 
-    public void createExpandableListViewManga(){
-
-        expandableListViewManga = (ExpandableListViewMangas) findViewById(R.id.main_activity_expandable_listview_mangas);
-        expandableListViewManga.setButton(addManga);
+        expandableListViewManga.setMainHelper(mainHelper);
 
         ArrayList<Object> parentItens = new ArrayList<>();
         ArrayList<String> parent = new ArrayList<>();
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         childContainer = new ArrayList<>();
 
-        for(int i = 0; i < 50; i++) {
+        for (int i = 0; i < 50; i++) {
 
             childInformations.add(String.valueOf(i));
             childInformations.add("112");
@@ -106,13 +108,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE), this, expandableListViewManga);
 
         expandableListViewManga.setAdapter(adapter);
-
-        slideLayerMangaWebView = new SlideLayerExpandableListView(expandableListViewManga, this);
     }
 
-    public void createExpandableListViewServer(){
-
-        expandableListViewServer = (ExpandableListView) findViewById(R.id.main_activity_expandable_listview);
+    public void createExpandableListViewServer() {
 
         ArrayList<String> parentItens = new ArrayList<>();
         ArrayList<Object> childItens = new ArrayList<>();
@@ -148,9 +146,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void createButton(){
-
-        addManga = (Button) findViewById(R.id.add_manga_button);
+    public void createButton() {
 
         addManga.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -183,10 +179,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void createMainHelper() {
+
+        mainHelper = new MainHelper(addManga);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
 
         return true;
     }
